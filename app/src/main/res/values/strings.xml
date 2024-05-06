@@ -7,5 +7,6 @@
     <string name="main_view">Main view</string>
     <string name="q_back_button">Назад</string>
     <string name="q_send_button">Отправить</string>
+    <string name="s_send_button">Отправить</string>
 
 </resources>
