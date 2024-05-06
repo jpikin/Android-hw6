@@ -8,5 +8,11 @@
     <string name="q_back_button">Назад</string>
     <string name="q_send_button">Отправить</string>
     <string name="s_send_button">Отправить</string>
+    <string name="q_1_var_1">Вариант 1</string>
+    <string name="q_1_var_2">Вариант 2</string>
+    <string name="question_1">Вопрос номер 1:</string>
+    <string name="question_2">Вопрос номер 2</string>
+    <string name="q_2_var_1">Вариант 1</string>
+    <string name="q_2_var_2">Вариант 2</string>
 
 </resources>

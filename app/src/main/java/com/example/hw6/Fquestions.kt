@@ -42,7 +42,6 @@ class Fquestions : Fragment() {
     }
 
     companion object {
-
         @JvmStatic
         fun newInstance() = Fquestions()
     }
