@@ -2,17 +2,19 @@
 
     <string name="app_name">Easy QUIZY</string>
     <string name="continue_button">Продолжить</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main_view">Main view</string>
     <string name="q_back_button">Назад</string>
-    <string name="q_send_button">Отправить</string>
-    <string name="s_send_button">Отправить</string>
-    <string name="q_1_var_1">Вариант 1</string>
-    <string name="q_1_var_2">Вариант 2</string>
-    <string name="question_1">Вопрос номер 1:</string>
-    <string name="question_2">Вопрос номер 2</string>
-    <string name="q_2_var_1">Вариант 1</string>
-    <string name="q_2_var_2">Вариант 2</string>
+    <string name="send_button">Отправить</string>
+    <string name="question_1">Сколько участников в kpop группе BTS?</string>
+    <string name="question_2">Как называется лейбл звукозаписи chief keef-a?</string>
+    <string name="question_3">Настоящее имя исполнителя Blood Orange?</string>
+    <string name="music_quiz">Музыкальный квиз</string>
+    <string name="answer_to_1_1">0</string>
+    <string name="answer_to_1_2">7</string>
+    <string name="answer_to_2_1">GLO GANG</string>
+    <string name="answer_to_2_2">DRAIN GANG</string>
+    <string name="answer_to_3_1">Devonté Hynes</string>
+    <string name="answer_to_3_2">Rakim Athelaston Mayers</string>
 
 </resources>

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fsend">
+    tools:context=".Fsend"
+    android:fitsSystemWindows="true">
 
 
     <TextView
@@ -24,7 +25,7 @@
         app:cornerRadius="10dp"
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="60dp"
-        android:text="@string/s_send_button"
+        android:text="@string/send_button"
         tools:layout_editor_absoluteX="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         />

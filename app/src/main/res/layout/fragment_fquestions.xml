@@ -1,62 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fquestions">
+    android:fitsSystemWindows="true">
 
-
-    <ScrollView
-        android:id="@+id/scroll_view"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/q_buttons_container"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ScrollViewCount">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/question_1_container"
+        <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/questions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/music_quiz"
+            android:fontFamily="@font/opensans_bold"
+            android:textSize="28sp"/>
 
-            <TextView
-                android:id="@+id/question_1_text"
+        <ScrollView
+            android:id="@+id/questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintBottom_toTopOf="@id/q_buttons_container"
+            tools:ignore="NotSibling"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_marginHorizontal="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/question_1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:orientation="vertical">
 
-            </TextView>
+                <TextView
 
-            <RadioGroup
-                android:id="@+id/question_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/question_1_text">
-
-                <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/q_1_var_1">
+                    android:text="@string/question_1"/>
+                <RadioGroup
+                    android:id="@+id/question1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/answer_1_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/answer_to_1_1" />
+                    <RadioButton
+                        android:id="@+id/answer_1_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/answer_to_1_2" />
+                </RadioGroup>
 
-                </RadioButton>
+                <TextView
 
-                <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/q_1_var_2">
+                    android:text="@string/question_2"/>
+                <RadioGroup
+                    android:id="@+id/question2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/answer_2_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/answer_to_2_1" />
+                    <RadioButton
+                        android:id="@+id/answer_2_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/answer_to_2_2" />
+                </RadioGroup>
 
-                </RadioButton>
+                <TextView
 
-            </RadioGroup>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question_3"/>
+                <RadioGroup
+                    android:id="@+id/question3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/answer_3_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/answer_to_3_1" />
+                    <RadioButton
+                        android:id="@+id/answer_3_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/answer_to_3_2" />
+                </RadioGroup>
 
-    </ScrollView>
+            </LinearLayout>
 
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/q_buttons_container"
@@ -67,7 +120,7 @@
         <Button
             android:id="@+id/qBackButton"
             android:layout_width="140dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="60dp"
             android:text="@string/q_back_button"
@@ -80,14 +133,16 @@
         <Button
             android:id="@+id/qSendButton"
             android:layout_width="140dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="60dp"
-            android:text="@string/q_send_button"
+            android:text="@string/send_button"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
         </Button>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

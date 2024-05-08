@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 class Fsend : Fragment() {
 
@@ -25,9 +23,5 @@ class Fsend : Fragment() {
         return inflater.inflate(R.layout.fragment_fsend, container, false)
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = Fsend()
 
-    }
 }

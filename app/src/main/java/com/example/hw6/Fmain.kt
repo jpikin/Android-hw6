@@ -5,8 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.commit
-import androidx.fragment.app.replace
+import androidx.navigation.fragment.findNavController
 import com.example.hw6.databinding.FragmentFmainBinding
 
 
@@ -28,10 +27,7 @@ class Fmain : Fragment() {
     ): View? {
         _binding = FragmentFmainBinding.inflate(inflater)
         binding.startButton.setOnClickListener {
-            parentFragmentManager.commit {
-                replace<Fquestions>(R.id.main_container)
-                addToBackStack(Fquestions::class.java.simpleName)
-            }
+            findNavController().navigate(R.id.action_fmain_to_fquestions)
         }
         return binding.root
 
@@ -41,9 +37,7 @@ class Fmain : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+    
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = Fmain()
-    }
+
 }
