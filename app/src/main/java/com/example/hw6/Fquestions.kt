@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import androidx.navigation.fragment.findNavController
 import com.example.hw6.databinding.FragmentFquestionsBinding
 
@@ -42,11 +41,13 @@ class Fquestions : Fragment() {
             parentFragmentManager.popBackStack()
         }
         binding.qSendButton.setOnClickListener {
-            val bundle = Bundle()
             val result = getAnswersByUser()
-            bundle.putString("MyArg", result)
-            findNavController().navigate(R.id.action_fquestions_to_fsend, bundle)
 
+            val bundle = Bundle()
+            bundle.putString("MyArg", result)
+            findNavController().navigate(R.id.action_fquestions_to_fsend)
+//          val action = FquestionsDirections.actionFquestionsToFsend(result)
+//          findNavController().navigate(action)
 
         }
     }

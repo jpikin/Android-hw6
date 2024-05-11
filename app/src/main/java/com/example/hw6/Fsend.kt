@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.hw6.databinding.FragmentFsendBinding
 
 
@@ -26,6 +27,9 @@ class Fsend : Fragment() {
         _binding = FragmentFsendBinding.inflate(inflater)
         val res = arguments?.getString("MyArg")
         binding.fsendResultText.text = res
+//        val args : FsendArgs by navArgs()
+//        binding.fsendResultText.text = args.myArg
+
         return binding.root
     }
 
