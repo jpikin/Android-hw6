@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
 import com.example.hw6.databinding.FragmentFsendBinding
+
 
 
 class Fsend : Fragment() {
@@ -18,7 +17,6 @@ class Fsend : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -35,13 +33,11 @@ class Fsend : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.restartButton.setOnClickListener {
-            findNavController().navigate(R.id.action_fsend_to_fmain)
-            fragmentManager?.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            findNavController().navigate(R.id.action_fsend_to_fquestions)
         }
     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }

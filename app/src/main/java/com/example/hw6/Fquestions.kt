@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import androidx.navigation.fragment.findNavController
 import com.example.hw6.databinding.FragmentFquestionsBinding
 
@@ -46,6 +47,7 @@ class Fquestions : Fragment() {
             bundle.putString("MyArg", result)
             findNavController().navigate(R.id.action_fquestions_to_fsend, bundle)
 
+
         }
     }
 
@@ -61,6 +63,6 @@ class Fquestions : Fragment() {
         if (binding.question2.checkedRadioButtonId == binding.answer21.id) correctAnswersCount++
         if (binding.question3.checkedRadioButtonId == binding.answer31.id) correctAnswersCount++
 
-        return "Ваш результат: $correctAnswersCount"
+        return "Ваш результат: $correctAnswersCount/3"
     }
 }

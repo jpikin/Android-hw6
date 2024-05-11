@@ -36,5 +36,8 @@
         <argument
             android:name="MyArg"
             android:defaultValue="result" />
+        <action
+            android:id="@+id/action_fsend_to_fquestions"
+            app:destination="@id/fquestions" />
     </fragment>
 </navigation>
