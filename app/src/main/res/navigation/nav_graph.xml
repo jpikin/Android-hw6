@@ -33,11 +33,11 @@
         <action
             android:id="@+id/action_fsend_to_fmain"
             app:destination="@id/fmain" />
-        <argument
-            android:name="MyArg"
-            android:defaultValue="result" />
         <action
             android:id="@+id/action_fsend_to_fquestions"
             app:destination="@id/fquestions" />
+        <argument
+            android:name="MyArg"
+            />
     </fragment>
 </navigation>
