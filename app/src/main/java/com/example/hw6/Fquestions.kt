@@ -38,16 +38,17 @@ class Fquestions : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            parentFragmentManager.beginTransaction().replace(R.id.main_container, Fmain()).commit()
             parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            findNavController().navigate(R.id.action_fquestions_to_fmain)
             isEnabled = false
         }
 
 
         binding.qBackButton.setOnClickListener {
-            parentFragmentManager.beginTransaction().replace(R.id.main_container, Fmain())
-                .commit()
             parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            findNavController().navigate(R.id.action_fquestions_to_fmain)
+
+
         }
         binding.qSendButton.setOnClickListener {
             val result = getAnswersByUser()
