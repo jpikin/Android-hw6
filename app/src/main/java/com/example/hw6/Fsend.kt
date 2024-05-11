@@ -34,8 +34,7 @@ class Fsend : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        val result = arguments?.getString("MyArg")
-//        binding.fsendResultText.text = result
+
         binding.restartButton.setOnClickListener {
             findNavController().navigate(R.id.action_fsend_to_fquestions)
 
