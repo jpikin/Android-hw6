@@ -45,7 +45,9 @@ class Fquestions : Fragment() {
 
 
         binding.qBackButton.setOnClickListener {
-            parentFragmentManager.popBackStack()
+            parentFragmentManager.beginTransaction().replace(R.id.main_container, Fmain())
+                .commit()
+            parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         }
         binding.qSendButton.setOnClickListener {
             val result = getAnswersByUser()
