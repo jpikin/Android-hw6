@@ -61,6 +61,6 @@ class Fquestions : Fragment() {
         if (binding.question2.checkedRadioButtonId == binding.answer21.id) correctAnswersCount++
         if (binding.question3.checkedRadioButtonId == binding.answer31.id) correctAnswersCount++
 
-        return "Ваш результат: "+correctAnswersCount.toString()
+        return "Ваш результат: $correctAnswersCount"
     }
 }
