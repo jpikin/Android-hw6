@@ -6,6 +6,7 @@
     <string name="main_view">Main view</string>
     <string name="q_back_button">Назад</string>
     <string name="send_button">Отправить</string>
+    <string name="f_send_button">Заново</string>
     <string name="question_1">Сколько участников в kpop группе BTS?</string>
     <string name="question_2">Как называется лейбл звукозаписи chief keef-a?</string>
     <string name="question_3">Настоящее имя исполнителя Blood Orange?</string>

@@ -5,10 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
+import com.example.hw6.databinding.FragmentFsendBinding
 
 
 class Fsend : Fragment() {
+
+    private var _binding: FragmentFsendBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,9 +25,23 @@ class Fsend : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        return inflater.inflate(R.layout.fragment_fsend, container, false)
+        _binding = FragmentFsendBinding.inflate(inflater)
+        val res = arguments?.getString("MyArg")
+        binding.fsendResultText.text = res
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.restartButton.setOnClickListener {
+            findNavController().navigate(R.id.action_fsend_to_fmain)
+            fragmentManager?.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        }
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 }

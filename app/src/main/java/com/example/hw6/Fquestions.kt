@@ -28,18 +28,25 @@ class Fquestions : Fragment() {
     ): View? {
         _binding = FragmentFquestionsBinding.inflate(inflater)
 
-        binding.qBackButton.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
-        binding.qSendButton.setOnClickListener {
-            findNavController().navigate(R.id.action_fquestions_to_fsend)
-        }
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+        binding.qBackButton.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+        binding.qSendButton.setOnClickListener {
+            val bundle = Bundle()
+            val result = getAnswersByUser()
+            bundle.putString("MyArg", result)
+            findNavController().navigate(R.id.action_fquestions_to_fsend, bundle)
+
+        }
     }
 
     override fun onDestroyView() {
@@ -47,13 +54,13 @@ class Fquestions : Fragment() {
         _binding = null
     }
 
-    private fun getAnswersByUser(): Int {
+    private fun getAnswersByUser(): String {
         var correctAnswersCount = 0
 
         if (binding.question1.checkedRadioButtonId == binding.answer12.id) correctAnswersCount++
         if (binding.question2.checkedRadioButtonId == binding.answer21.id) correctAnswersCount++
         if (binding.question3.checkedRadioButtonId == binding.answer31.id) correctAnswersCount++
 
-        return correctAnswersCount
+        return "Ваш результат: "+correctAnswersCount.toString()
     }
 }

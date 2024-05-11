@@ -29,5 +29,12 @@
         android:id="@+id/fsend"
         android:name="com.example.hw6.Fsend"
         android:label="fragment_fsend"
-        tools:layout="@layout/fragment_fsend" />
+        tools:layout="@layout/fragment_fsend" >
+        <action
+            android:id="@+id/action_fsend_to_fmain"
+            app:destination="@id/fmain" />
+        <argument
+            android:name="MyArg"
+            android:defaultValue="result" />
+    </fragment>
 </navigation>
