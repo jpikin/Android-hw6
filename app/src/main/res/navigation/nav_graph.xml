@@ -15,7 +15,8 @@
             app:destination="@id/fquestions"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
-            />
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/fquestions"
@@ -29,7 +30,10 @@
             />
         <action
             android:id="@+id/action_fquestions_to_fmain"
-            app:destination="@id/fmain" />
+            app:destination="@id/fmain"
+            app:enterAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_out_right"
+            />
     </fragment>
     <fragment
         android:id="@+id/fsend"
