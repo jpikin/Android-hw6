@@ -20,7 +20,9 @@
         android:label="Fquestions" >
         <action
             android:id="@+id/action_fquestions_to_fsend"
-            app:destination="@id/fsend" />
+            app:destination="@id/fsend"
+            app:popUpTo="@id/fmain"
+            />
         <action
             android:id="@+id/action_fquestions_to_fmain"
             app:destination="@id/fmain" />
@@ -31,11 +33,10 @@
         android:label="fragment_fsend"
         tools:layout="@layout/fragment_fsend" >
         <action
-            android:id="@+id/action_fsend_to_fmain"
-            app:destination="@id/fmain" />
-        <action
             android:id="@+id/action_fsend_to_fquestions"
-            app:destination="@id/fquestions" />
+            app:destination="@id/fquestions"
+            app:popUpTo="@id/fmain"
+            />
         <argument
             android:name="MyArg"
             />

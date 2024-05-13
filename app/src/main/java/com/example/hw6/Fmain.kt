@@ -13,22 +13,15 @@ import com.example.hw6.databinding.FragmentFmainBinding
 
 class Fmain : Fragment() {
 
-
     private var _binding: FragmentFmainBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-      }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentFmainBinding.inflate(inflater)
-
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,7 +35,4 @@ class Fmain : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-    
-
-
 }
