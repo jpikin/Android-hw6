@@ -31,13 +31,11 @@ class Fquestions : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imageView = binding.qImage
+        val animatorInflater = AnimatorInflater
+            .loadAnimator(context, R.animator.custom_animation)
+            as ObjectAnimator
 
-
-        (AnimatorInflater.loadAnimator(context, R.animator.custom_animation) as ObjectAnimator).apply {
-            target = imageView
-            start()
-        }
+        animatorInflater.apply {target = binding.qImage}.start()
 
         binding.qBackButton.setOnClickListener {
             parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
