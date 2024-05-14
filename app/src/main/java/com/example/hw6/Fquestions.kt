@@ -4,6 +4,7 @@ package com.example.hw6
 import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
 import android.content.Context
+import android.graphics.LinearGradient
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -30,6 +31,7 @@ class Fquestions : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         val animatorInflater = AnimatorInflater
             .loadAnimator(context, R.animator.custom_animation)
