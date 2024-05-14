@@ -19,5 +19,6 @@
     <string name="answer_to_3_2">Rakim Athelaston Mayers</string>
     <string name="your_result">Ваш результат :</string>
     <string name="div3">/3</string>
+    <string name="questions_image">questions image</string>
 
 </resources>
