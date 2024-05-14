@@ -1,8 +1,9 @@
 package com.example.hw6
 
 
+import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
-import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,14 +33,11 @@ class Fquestions : Fragment() {
 
         val imageView = binding.qImage
 
-        ObjectAnimator.ofFloat(imageView, "alpha", 0f, 1f).apply {
-            duration = 2000
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }.start()
 
-
-
+        (AnimatorInflater.loadAnimator(context, R.animator.custom_animation) as ObjectAnimator).apply {
+            target = imageView
+            start()
+        }
 
         binding.qBackButton.setOnClickListener {
             parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
