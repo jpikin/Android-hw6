@@ -26,13 +26,16 @@
             android:id="@+id/action_fquestions_to_fsend"
             app:destination="@id/fsend"
             app:popUpTo="@id/fmain"
-
+            app:enterAnim="@anim/slide_out_up"
+            app:exitAnim="@anim/slide_out_down"
             />
         <action
             android:id="@+id/action_fquestions_to_fmain"
             app:destination="@id/fmain"
             app:enterAnim="@anim/slide_in_left"
             app:popEnterAnim="@anim/slide_out_right"
+            app:exitAnim="@anim/slide_out_down"
+            app:popExitAnim="@anim/slide_out_up"
             />
     </fragment>
     <fragment
@@ -44,6 +47,10 @@
             android:id="@+id/action_fsend_to_fquestions"
             app:destination="@id/fquestions"
             app:popUpTo="@id/fmain"
+            app:enterAnim="@anim/slide_out_down"
+            app:exitAnim="@anim/slide_out_up"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_out_down"
 
             />
         <argument
