@@ -21,6 +21,8 @@ import com.example.hw6.databinding.FragmentFsendBinding
 
 class Fsend : Fragment() {
 
+
+
     private var _binding: FragmentFsendBinding? = null
     private val binding get() = _binding!!
 
@@ -48,47 +50,6 @@ class Fsend : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val button = binding.restartButton
-        val buttonShader = LinearGradient(
-            0f, 0f,
-            button.paint.measureText(button.text.toString()),
-            button.textSize,
-            intArrayOf(Color.WHITE, Color.RED, Color.WHITE),
-            null,
-            Shader.TileMode.CLAMP
-        )
-        button.paint.shader = buttonShader
-        button.invalidate()
-
-        ValueAnimator.ofObject(
-            GradientArgbEvaluator,
-            intArrayOf(Color.WHITE, Color.WHITE, Color.WHITE),
-            intArrayOf(Color.WHITE, Color.WHITE, Color.BLUE),
-            intArrayOf(Color.WHITE, Color.BLUE, Color.RED),
-            intArrayOf(Color.BLUE, Color.RED, Color.YELLOW),
-            intArrayOf(Color.RED, Color.YELLOW, Color.CYAN),
-            intArrayOf(Color.YELLOW, Color.CYAN, Color.BLACK),
-            intArrayOf(Color.CYAN, Color.BLACK, Color.WHITE),
-            intArrayOf(Color.BLACK, Color.WHITE, Color.BLUE),
-            intArrayOf(Color.WHITE, Color.BLUE, Color.GREEN),
-        ).apply {
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-            duration = 3000
-            addUpdateListener {
-                val button = binding.restartButton
-                val shader = LinearGradient(
-                    0f, 0f,
-                    button.paint.measureText(button.text.toString()),
-                    button.textSize,
-                    it.animatedValue as IntArray,
-                    null,
-                    Shader.TileMode.CLAMP)
-                button.paint.shader = shader
-                button.invalidate()
-                start()
-            }
-        }
 
         ObjectAnimator.ofPropertyValuesHolder(binding.fsendResultText, rotationY, textColor).apply {
             duration = 5000
@@ -109,16 +70,5 @@ class Fsend : Fragment() {
         _binding = null
     }
 
-    object GradientArgbEvaluator : TypeEvaluator<IntArray> {
-        val argbEvaluator = ArgbEvaluator()
-        override fun evaluate(
-            fraction: Float,
-            startValue: IntArray,
-            endValue: IntArray
-        ): IntArray {
-            return startValue.mapIndexed { index, item ->
-                argbEvaluator.evaluate(fraction, item, endValue[index]) as Int
-            }.toIntArray()
-        }
-    }
+
 }
