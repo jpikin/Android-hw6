@@ -1,5 +1,6 @@
 package com.example.hw6
 
+import android.animation.AnimatorSet
 import android.animation.ArgbEvaluator
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
@@ -51,13 +52,23 @@ class Fsend : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        ObjectAnimator.ofPropertyValuesHolder(binding.fsendResultText, rotationY, textColor).apply {
+
+        val anim1 = ObjectAnimator.ofPropertyValuesHolder(binding.fsendResultText, rotationY, textColor).apply {
             duration = 5000
             interpolator = AccelerateInterpolator()
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
-            start()
         }
+
+        val anim2 = ObjectAnimator.ofFloat(binding.restartButton, "translationY", 0f, 100f).apply {
+            duration = 2000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }
+
+        val animatorSet = AnimatorSet()
+        animatorSet.playTogether(anim1, anim2)
+        animatorSet.start()
 
         binding.restartButton.setOnClickListener {
             findNavController().navigate(R.id.action_fsend_to_fquestions)
